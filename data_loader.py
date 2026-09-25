@@ -32,7 +32,7 @@ def download_prices(tickers):
         print('Batch', i // BATCH_SIZE + 1, '-', len(batch), 'tickers')
 
         try:
-            raw = yf.download(batch, start=START, end=END, auto_adjust=True, group_by='ticker', progress='FALSE',)
+            raw = yf.download(batch, start=START, end=END, auto_adjust=True, group_by='ticker', progress=False,)
 
         except Exception as e:
             print('whole batch failed:', e)
